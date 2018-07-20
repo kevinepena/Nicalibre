@@ -1,0 +1,50 @@
+/* Font Options */
+
+/* Pairing1: 
+font-family: 'Roboto', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Playfair Display', serif; */
+
+/* header {
+  height: 0.5vh;
+  width: 80%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px 0;
+
+  display: grid;
+  grid-template-columns: repeat(11, minmax(50px, 1fr));
+  grid-template-rows: repeat(3, 50px);
+  grid-gap: 10px;
+  justify-items: center;
+  align-items: center;
+} */
+/* 
+.header-item {
+  grid-column: 1/-1;
+  
+} */
+
+header{
+    padding-bottom: 5vh;
+    margin: 4em;
+ 
+  
+}
+
+
+.h1 {
+  font-weight: 600;
+  text-transform: uppercase;
+  color:  rgb(13, 100, 195) !important;
+  /* font-size: 7vh; */
+  font-family: 'Raleway', sans-serif !important;
+    border-bottom: .1em solid rgb(235, 222, 176);
+}
+
+.h2 {
+  font-family: 'Lato', sans-serif !important;
+  color: orange !important;
+  padding-top: 0 !important;
+  font-size: 1.2em !important;
+}

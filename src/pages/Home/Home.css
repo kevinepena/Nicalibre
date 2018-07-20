@@ -1,0 +1,91 @@
+.collection {
+  border: 0;
+  margin-top:30px;
+  padding: 0;
+  width: 100% !important;
+  align-content: center;
+  
+}
+
+.container {
+  padding-top: 5vh;
+  width: 100%;
+  align-content: center;
+  
+}
+
+/* box containing all posts */
+.card-container {
+  align-content: center;
+  width: 100%;
+  overflow: scroll;
+  height: 600px;
+}
+.card {
+  width: 450px;
+  position: relative;
+  float: left;
+  text-align: left;
+  margin-bottom: 3%;
+  margin-top: 3%;
+  padding-top: 1%;
+
+  /* border: 2px solid #000; */
+  border-radius: 0;
+  border: 0;
+}
+
+img {
+  max-width: 100%;
+  float: left;
+  padding: 0;
+}
+
+.img-container {
+  max-width: 100%;
+  align-self: center;
+}
+
+.content {
+  max-width: 100%;
+  margin-top: 0px;
+
+  font-size: 20px;
+  line-height: 55px;
+  font-family: "Lato", sans-serif;
+  overflow: scroll;
+}
+
+.card > img {
+  width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.content.li {
+  font-family: 'Kanit', sans-serif !important;
+  list-style-type: none;
+  border-bottom: 2px solid #000;
+  max-height: 55px;
+
+  overflow: scroll;
+}
+
+/* form css */
+.createpost {
+  width: 100%;
+  margin: 5%;
+}
+.btn-choose {
+  background-color: yellowgreen;
+}
+
+
+h1 {
+  color: rgb(13, 100, 195);
+  display: inline-block;
+  margin-bottom: 10px;
+}

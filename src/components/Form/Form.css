@@ -1,0 +1,8 @@
+.form-container{
+    align-content: center;
+}
+
+.btn-upload,
+.btn-choose{
+    background-color: rgb(200, 215, 105);
+}

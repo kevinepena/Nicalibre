@@ -1,0 +1,27 @@
+.container-fluid {
+  width: 100%;
+}
+
+.gallery-container {
+  padding-top: 0rem;
+  justify-content: center;
+  padding-left: 200px;
+}
+.card {
+  max-width: 250px;
+  height: 250px;
+  padding: 5px 10px;
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.1rem;
+
+}
+img {
+  max-width: 250px;
+  height: 250px;
+  border-radius: 5px;
+  object-fit: cover;
+}

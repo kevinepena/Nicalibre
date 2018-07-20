@@ -13,17 +13,17 @@ class CreatePost extends Component {
   refreshBlogs() {
     console.log("this should go!");
  
-  }
+  };
 
   reload(){
      setTimeout(() => {
     window.location.reload();
    }, 1000);
-  }
+  };
 
   componentDidMount() {
     this.refreshBlogs();
-  }
+  };
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -35,7 +35,8 @@ class CreatePost extends Component {
     event.preventDefault();
     const { title, body } = this.state;
     console.log({ title, body });
-  //   \
+  };
+
 
   // image upload
 

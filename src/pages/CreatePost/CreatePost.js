@@ -12,11 +12,7 @@ class CreatePost extends Component {
 
   refreshBlogs() {
     console.log("this should go!");
-    API.getArticle().then(res => {
-      console.log(res.data);
-      this.setState({ blogs: res.data });
-      
-    });
+ 
   }
 
   reload(){
@@ -39,15 +35,7 @@ class CreatePost extends Component {
     event.preventDefault();
     const { title, body } = this.state;
     console.log({ title, body });
-    API.postArticle({ title, body })
-      .then(res => {
-        console.log(res);
-        this.setState({ title: "", body: "", image: "" });
-      }).then(
-       this.reload()
-      )
-      .catch(err => console.log(err));
-  };
+  //   \
 
   // image upload
 

@@ -1,1 +1,1 @@
-export { Forum , EditForum } from "./Forum";
+export { default } from "./Forum";

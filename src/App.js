@@ -8,10 +8,9 @@ import Nav from "./components/Nav";
 import Menu from "./components/Menu";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
-// import Donations from "./pages/Donations";
 import Contact from "./pages/Contact";
 import CreatePost from "./pages/CreatePost";
-import { Forum, EditForum } from "./pages/Forum";
+import Forum  from "./pages/Forum"
 
 import Callback from "./pages/Callback";
 import Profile from "./pages/Profile";
@@ -63,7 +62,7 @@ class App extends Component {
               }}
             />
 
-            <Route
+            {/* <Route
               path="/editforum"
               render={props => {
                 return auth.isAuthenticated() &&
@@ -73,7 +72,7 @@ class App extends Component {
                   <Redirect to="/forum" />
                 );
               }}
-            />
+            /> */}
 
             <Route
               exact

@@ -25,7 +25,7 @@ font-family: 'Playfair Display', serif; */
   
 } */
 
-header{
+/* header{
     padding-bottom: 5vh;
     margin: 4em;
  
@@ -37,14 +37,14 @@ header{
   font-weight: 600;
   text-transform: uppercase;
   color:  rgb(13, 100, 195) !important;
-  /* font-size: 7vh; */
-  font-family: 'Raleway', sans-serif !important;
-    border-bottom: .1em solid rgb(235, 222, 176);
+ font-size: 7vh; 
+   font-family: 'Raleway', sans-serif !important;
+    border-bottom: .1em solid rgb(235, 222, 176); 
 }
 
-.h2 {
+/* .h2 {
   font-family: 'Lato', sans-serif !important;
   color: orange !important;
   padding-top: 0 !important;
   font-size: 1.2em !important;
-}
+} */ 

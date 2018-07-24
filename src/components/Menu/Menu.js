@@ -1,9 +1,10 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import { Nav, NavItem, NavLink } from "reactstrap";
 import classnames from "classnames";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Menu.css";
+
 
 export default class Menu extends React.Component {
   constructor(props) {
@@ -16,11 +17,13 @@ export default class Menu extends React.Component {
   }
 
   toggle(tab) {
+    console.log(this.state.activeTab)
     if (this.state.activeTab !== tab) {
       this.setState({
         activeTab: tab
       });
     }
+    console.log(this.state.activeTab)
   }
   render() {
     return (
@@ -28,20 +31,20 @@ export default class Menu extends React.Component {
         <Nav tabs className="nav-tabs">
           <NavItem className=".nav-item">
             <NavLink
-             href="/"
               className={classnames({ active: this.state.activeTab === "1" })}
               onClick={() => {
                 this.toggle("1");
               }}
             >
-              Home &nbsp; &nbsp;
+              <Link to="/" >
+                Home &nbsp; &nbsp;
               <i className="fas fa-home" />
+              </Link>
             </NavLink>
           </NavItem>
 
           <NavItem className=".nav-item">
             <NavLink
-              href="/forum"
               className={classnames({ active: this.state.activeTab === "2" })}
               onClick={() => {
                 this.toggle("2");
@@ -54,26 +57,28 @@ export default class Menu extends React.Component {
 
           <NavItem className=".nav-item">
             <NavLink
-              href="/gallery"
               className={classnames({ active: this.state.activeTab === "3" })}
               onClick={() => {
                 this.toggle("3");
               }}
             >
-              Gallery &nbsp;
+              <Link to="/gallery">
+                Gallery &nbsp;
               <i className="fas fa-camera" />
+              </Link>
             </NavLink>
           </NavItem>
           <NavItem className=".nav-item">
             <NavLink
-              href="/help"
               className={classnames({ active: this.state.activeTab === "4" })}
               onClick={() => {
                 this.toggle("4");
               }}
             >
-              How you can help &nbsp;
+              <Link to="/help">
+                How you can help &nbsp;
               <i className="fas fa-hands-helping" />
+              </Link>
             </NavLink>
           </NavItem>
 

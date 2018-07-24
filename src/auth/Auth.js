@@ -8,11 +8,11 @@ const origin = window.location.origin;
 export default class Auth {
     requestedScopes = 'openid profile read:blog write:blog roles:admin'
     auth0 = new auth0.WebAuth({
-    domain: 'matsi.auth0.com',
-    clientID: 'T-nA041F0yt5r9u-svHTQSb3rgfc2kMv',
+    domain: 'kevpen.auth0.com',
+    clientID: 'iuoMj520kIvPOE1ohvr2wgxaYJVrVVU4',
     redirectUri: origin + '/callback',
     // audience: 'Project3',
-    audience: 'https://matsi.auth0.com/userinfo',
+    audience: 'https://kevpen.auth0.com/userinfo',
     responseType: 'token id_token',
     scope: this.requestedScopes
   });

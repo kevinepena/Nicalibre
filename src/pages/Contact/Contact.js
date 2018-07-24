@@ -1,15 +1,22 @@
 import React, { Component } from "react";
 import "./Contact.css";
+import Iframe from 'react-iframe';
+
 
 class Contact extends Component {
   render() {
     return (
       <div className="container">
-        <em>Check console to show current location of page</em>
-        <div>
-          <h2>To Add:</h2>
-          <p>Render Donations section</p>
-        </div>
+ 
+<Iframe url="https://www.gofundme.com/mvc.php?route=widgets/mediawidget&fund=apoyar-a-nicaragua&image=0&coinfo=0&preview=1"
+        width="450px"
+        height="165px"
+        id="myId"
+        className="myClassname"
+        display="initial"
+        position="relative"
+        />
+
 
         <div className="form-text">
           <h1>Want to reach out? </h1>

@@ -3,23 +3,21 @@
   margin-top:30px;
   padding: 0;
   width: 100% !important;
-  align-content: center;
+  /* align-content: center; */
   
 }
 
 .container {
   padding-top: 5vh;
   width: 100%;
-  align-content: center;
+  /* align-content: center; */
   
 }
 
 /* box containing all posts */
 .card-container {
-  align-content: center;
+  /* align-content: center; */
   width: 100%;
-  overflow: scroll;
-  height: 600px;
 }
 .card {
   width: 450px;
@@ -37,7 +35,7 @@
 
 img {
   max-width: 100%;
-  float: left;
+
   padding: 0;
 }
 
@@ -47,13 +45,14 @@ img {
 }
 
 .content {
-  max-width: 100%;
-  margin-top: 0px;
-
-  font-size: 20px;
-  line-height: 55px;
+  display: inline;
+  position: absolute;
+  max-width: 92%;
+  font-size: 15px;
   font-family: "Lato", sans-serif;
-  overflow: scroll;
+  bottom: 0px;
+  color: white;
+  background-color: rgba(0, 0, 0, .5);
 }
 
 .card > img {
@@ -88,4 +87,10 @@ h1 {
   color: rgb(13, 100, 195);
   display: inline-block;
   margin-bottom: 10px;
+}
+
+.source {
+  float: right;
+  font-size: 8px;
+  padding-right: 5px
 }

@@ -209,31 +209,38 @@ class Home extends Component {
 
         <div className="card-container">
           <Wrapper>
-            {/* Map each of our posts */
-              this.state.blogs.map(post => (
+            <div className="left">
+              {/* Map each of our posts */
+                this.state.blogs.map(post => (
 
-                <div key={post._id} className="card col-lg-4 col-md-4 col-sm-6 col-12">
-                  <a href={post.link} target="_blank">
-                    <div className="img-container">
-                      <img
-                        alt={post.title}
-                        src={post.img}
-                      />
-                    </div>
-                    <span className="content">
-
-                      {post.title}
-                      <br />
-
-                      <div className="source">
-                      Source: {post.source}
+                  <div key={post._id} className="card col-lg-4 col-md-4 col-sm-6 col-12">
+                    <a href={post.link} target="_blank">
+                      <div className="img-container">
+                        <img
+                          alt={post.title}
+                          src={post.img}
+                        />
                       </div>
+                      <span className="content">
 
-                    </span>
-                  </a>
-                </div>
+                        {post.title}
+                        <br />
 
-              ))}
+                        <div className="source">
+                          Source: {post.source}
+                        </div>
+
+                      </span>
+                    </a>
+                  </div>
+
+                ))}
+            </div>
+            <div className="right">
+            <section id="react-app">
+            {/* {{ markup }} */}
+            </section>
+            </div>
           </Wrapper>
         </div>
       </div>

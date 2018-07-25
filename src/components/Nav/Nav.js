@@ -39,29 +39,31 @@ class Nav extends Component {
 
     return (
       <div>
-        <nav className="navbar navbar-expand-lg">
-          <div className="nav-left">
-            <div className="nav-picture">
-              <img
-                src={require("./coaNicaragua.png")}
-                id="navimg"
-                alt=""
-                className="navbar-brand"
-                href="/"
-              />
-            </div>
+        <nav className="navbar navbar-expand-lg ">
+        
+          {/* <div className="nav-left"> */}
 
-            <div className="nav-left-text">
-              <header className="header-container">
-                <h6 className=" header-item h1i">¡ NicaLibre !</h6>
+                <div className="nav-picture">
+                  <img
+                    src={require("./coaNicaragua.png")}
+                    id="navimg"
+                    alt=""
+                    className="navbar-brand"
+                    href="/"
+                  />
+                </div>
 
-                <h5 className="header-item h2i">
-                  {" "}
-                  <em>Happening Now</em>
-                </h5>
-              </header>
-            </div>
-          </div>
+                <div className="nav-left-text">
+                  <header className="header-container">
+                    <h6 className=" header-item h1i">¡ NicaLibre !</h6>
+
+                    <h5 className="header-item h2i">
+                      {" "}
+                      <em>Happening Now</em>
+                    </h5>
+                  </header>
+                </div>
+          {/* </div> */}
 
           <button
             className="navbar-toggler"

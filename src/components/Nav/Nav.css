@@ -1,40 +1,45 @@
-#navimg {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-}
+
 
 /* NAVIGATION */
 .navbar {
   width: 95%;
-  margin: 0 auto;
-  font-family: "Lato", sans-serif;
-  font-weight: 600;
   /* box-shadow: 0px 5px 0px #dedede; */
   animation: 1s ease-out 0s 1 slideInFromTop;
+  padding:0 ;
+  margin-top: 2vh !important;
+  
 }
 .nav-left {
-  height: 0.5vh;
-  width: 90%;
-  margin: 0 auto;
-  background: #fff;
-  padding: 20px 0;
-  justify-items: center;
-  align-items: center;
+ 
+  /* margin-left: 4px;
+  
+  padding: 20px 0; */
+      padding: 0.3em 5.5em !important;
+ 
+}
+
+#navimg {
+  width: 55px !important;
+  height: 55px !important;
+  object-fit: contain !important;
 
 }
-.nav-left-text {
+
+
+.nav-left-text, .nav-picture {
   float: left;
+  height: 50px;
 }
 
 .h1i {
   font-weight: 500;
   text-transform: uppercase;
   color: rgb(13, 100, 195) !important;
-  font-size: 1.9vh;
+  font-size: 2.5vh;
   font-family: "Playfair", sans-serif !important;
-  padding-bottom: .2em !important;
-  border-bottom: 0.1em solid rgb(235, 222, 176);
+  padding-bottom: .45vh !important;
+  border-bottom: 0.09em solid rgb(235, 222, 176);
+  margin-bottom: .2vh;
   
 }
 
@@ -96,6 +101,7 @@
   /* border: 0.1em solid rgba(199, 197, 197, 0.482); */
   padding: 0.3em 1.5em;
   margin: 0px 4px;
+  font-size: 1.8vh;
 }
 
 /* animation: nav-logo-spin infinite 20s linear; */

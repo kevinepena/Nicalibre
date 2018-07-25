@@ -1,8 +1,19 @@
 import React, { Component } from "react";
 import firebase from "../../firebase";
 
+import {
+  Card,
+  Button,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  CardText,
+  CardImg
+
+} from "reactstrap";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../pages/Forum/Forum.css";
-// import CreatePost from "./pages/CreatePost";
+
 
 class Forum extends Component {
   constructor() {
@@ -11,9 +22,9 @@ class Forum extends Component {
       blogContent: "",
       title: "",
       allBlogs: [],
-      selectedFile: "",
-      fileName: "",
-      downloadURL: ""
+     created: "",
+      imageUrl: "",
+    
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,42 +38,52 @@ class Forum extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const allBlogsRef = firebase.database().ref("allBlogs");
+
     // const storageRef = firebase.storage().ref("blogPictures");
 
     const blog = {
       title: this.state.title,
       blogContent: this.state.blogContent,
-      selectedFile: this.state.selectedFile,
-      fileName: this.state.fileName,
-      downloadURL: ""
+      created:  firebase.database.ServerValue.TIMESTAMP,
+      imageUrl: this.state.imageUrl,
+
     };
+   
     allBlogsRef.push(blog);
     this.setState({
-      blogContent: "",
       title: "",
-      selectedFile: "",
-      fileName: "",
-      downloadURL: ""
+      blogContent: "",
+      created:"",
+      imageUrl: ""
+    
     });
   }
 
   componentDidMount() {
-    const allBlogsRef = firebase.database().ref("allBlogs");
+    const allBlogsRef = firebase
+      .database()
+      .ref("allBlogs")
+      .orderByChild("published");
+
+    // .limitToLast(5);
     allBlogsRef.on("value", snapshot => {
       let allBlogs = snapshot.val();
+
       let newState = [];
       for (let blog in allBlogs) {
         newState.push({
           id: blog,
           title: allBlogs[blog].title,
           blogContent: allBlogs[blog].blogContent,
-          selectedFile: allBlogs[blog].selectedFile,
-          fileName: allBlogs[blog].fileName
+          created: allBlogs[blog].created,
+          imageUrl: allBlogs[blog].imageUrl
         });
       }
+      
       this.setState({
         allBlogs: newState
       });
+      
     });
   }
 
@@ -95,7 +116,7 @@ class Forum extends Component {
                     <br />
                   </div>
 
-                  <label htmlFor="post-title">Add Blog Content:</label>
+                  <label htmlFor="post-blogContent">Add Blog Content:</label>
                   <br />
                   <input
                     type="text"
@@ -105,13 +126,13 @@ class Forum extends Component {
                     value={this.state.blogContent}
                   />
 
-                  <label htmlFor="post-title">Add Image:</label>
+                  <label htmlFor="post-blogImage">Add Image URL:</label>
                   <br />
                   <input
-                    className="btn-choose"
-                    type="file"
-                    name="fileName"
-                    value={this.state.fileName}
+                    type="text"
+                    name="imageUrl"
+                    placeholder="Insert image URL with http://..."
+                    value={this.state.imageUrl}
                     onChange={this.handleChange}
                   />
 
@@ -126,30 +147,35 @@ class Forum extends Component {
           </div>
         </div>
 
-        <div className="wrapper">
-          <ul>
-            {this.state.allBlogs.map(post => {
+        <div className="wrapper container ">
+        {/* <CardDeck> */}
+          {this.state.allBlogs
+            .slice(0)
+            .reverse()
+            .map(post => {
               return (
-                <li key={post.id}>
-                  <p>{post.fileName}</p>
-                  <img src={post.fileName} alt="blog" />
-                  <h3>{post.title}</h3>
-                  <p>
-                    Blog Content: {post.blogContent}
-                    <br />
-                    <br />
+           
+                <Card key={post.id}>
+                  <CardHeader>{post.title}</CardHeader>
+                  <CardImg top width="100%" src="{post.imageUrl} alt={post.title} "/>
+        
+                  <CardBody>
+
+                    <CardText>{post.blogContent}</CardText>
                     {loggedIn ? (
-                      <button onClick={() => this.removeItem(post.id)}>
+                      <Button onClick={() => this.removeItem(post.id)}>
                         Remove Post
-                      </button>
+                      </Button>
                     ) : (
                       ""
                     )}
-                  </p>
-                </li>
+                  </CardBody>
+                  <CardFooter>Footer</CardFooter>
+                </Card>
+             
               );
             })}
-          </ul>
+            {/* </CardDeck> */}
         </div>
       </div>
     );

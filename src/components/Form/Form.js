@@ -35,7 +35,7 @@ class Forum extends Component {
       blogContent: this.state.blogContent,
       selectedFile: this.state.selectedFile,
       fileName: this.state.fileName,
-      // downloadURL: "",
+
       created: ""
     };
     allBlogsRef.push(blog);
@@ -44,7 +44,7 @@ class Forum extends Component {
       title: "",
       selectedFile: "",
       fileName: "",
-      downloadURL: "",
+     
       created: Date.now()
     });
   }

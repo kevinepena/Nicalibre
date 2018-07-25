@@ -44,13 +44,13 @@ class Nav extends Component {
           {/* <div className="nav-left"> */}
 
                 <div className="nav-picture">
-                  <img
+                  {/* <img
                     src={require("./coaNicaragua.png")}
                     id="navimg"
                     alt=""
                     className="navbar-brand"
                     href="/"
-                  />
+                  /> */}
                 </div>
 
                 <div className="nav-left-text">

@@ -8,12 +8,14 @@ import {
   CardBody,
   CardFooter,
   CardText,
-  CardImg
-
+  CardImg,
+  Collapse,
+  Form,
+  Input,
+  Label
 } from "reactstrap";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../pages/Forum/Forum.css";
-
 
 class Forum extends Component {
   constructor() {
@@ -22,13 +24,19 @@ class Forum extends Component {
       blogContent: "",
       title: "",
       allBlogs: [],
-     created: "",
+      created: "",
       imageUrl: "",
-    
+      collapse: false
     };
+    this.toggle = this.toggle.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  toggle() {
+    this.setState({ collapse: !this.state.collapse });
+  }
+
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value
@@ -39,24 +47,22 @@ class Forum extends Component {
     e.preventDefault();
     const allBlogsRef = firebase.database().ref("allBlogs");
 
-    // const storageRef = firebase.storage().ref("blogPictures");
-
+    // pushing  new created post to Firebase
     const blog = {
       title: this.state.title,
       blogContent: this.state.blogContent,
-      created:  firebase.database.ServerValue.TIMESTAMP,
-      imageUrl: this.state.imageUrl,
-
+      created: firebase.database.ServerValue.TIMESTAMP,
+      imageUrl: this.state.imageUrl
     };
-   
+
     allBlogsRef.push(blog);
     this.setState({
       title: "",
       blogContent: "",
-      created:"",
+      created: "",
       imageUrl: ""
-    
     });
+    // ** end pushing new created post to Firebase **
   }
 
   componentDidMount() {
@@ -79,11 +85,10 @@ class Forum extends Component {
           imageUrl: allBlogs[blog].imageUrl
         });
       }
-      
+
       this.setState({
         allBlogs: newState
       });
-      
     });
   }
 
@@ -148,34 +153,83 @@ class Forum extends Component {
         </div>
 
         <div className="wrapper container ">
-        {/* <CardDeck> */}
+          {/* <CardDeck> */}
           {this.state.allBlogs
             .slice(0)
             .reverse()
             .map(post => {
               return (
-           
-                <Card key={post.id}>
-                  <CardHeader>{post.title}</CardHeader>
-                  <CardImg top width="100%" src="{post.imageUrl} alt={post.title} "/>
-        
-                  <CardBody>
+                <div key={post.id}>
+                  <Card>
+                    <CardHeader>
+                      {post.title}
+                      {loggedIn ? (
+                        <Button
+                          onClick={() => this.removeItem(post.id)}
+                          color="danger" className="float-right"
+                        >
+                          Delete Post <i className="far fa-trash-alt" />
+                        </Button>
+                      ) : (
+                        ""
+                      )}
+                    </CardHeader>
+                    <CardImg
+                      top
+                      width="100%"
+                      // src="{post.imageUrl} alt={post.title} "
+                    />
+                    <CardBody>
+                      <CardText>{post.blogContent}</CardText>
+                    </CardBody>
 
-                    <CardText>{post.blogContent}</CardText>
-                    {loggedIn ? (
-                      <Button onClick={() => this.removeItem(post.id)}>
-                        Remove Post
-                      </Button>
-                    ) : (
-                      ""
-                    )}
-                  </CardBody>
-                  <CardFooter>Footer</CardFooter>
-                </Card>
-             
+                    <CardFooter>
+                      {loggedIn ? (
+                        <div>
+                          <Button className="float-left">
+                            <i className="far fa-thumbs-up" />
+                          </Button>
+                          <Button className="float-left"> 
+                            <i className="far fa-thumbs-down" />
+                          </Button>
+                          <Button className="float-right" onClick={this.toggle}>
+                            Comment <i className="far fa-comment-dots " />
+                          </Button>
+                          <Collapse isOpen={this.state.collapse}>
+                            <Card>
+                              <CardHeader>
+                                <Label for="exampleText">Comment:</Label>
+                              </CardHeader>
+                              <CardBody>
+                                <Form>
+                                  <Input
+                                    type="textarea"
+                                    name="text"
+                                    id="exampleText"
+                                    autoFocus defaultValue={this.props.commentText}
+                                  />
+                                  <CardFooter>
+                                    <Button>
+                                      {" "}
+                                      Submit{" "}
+                                      <i className="fas fa-paper-plane" />
+                                    </Button>
+                                    </CardFooter>
+                                </Form>
+                                
+                              </CardBody>
+                            </Card>
+                          </Collapse>
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                    </CardFooter>
+                  </Card>
+                </div>
               );
             })}
-            {/* </CardDeck> */}
+          {/* </CardDeck> */}
         </div>
       </div>
     );

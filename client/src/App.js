@@ -16,6 +16,9 @@ import { Forum, EditForum } from "./pages/Forum";
 import Callback from "./pages/Callback";
 import Profile from "./pages/Profile";
 
+// Snag the initial state that was passed from the server side
+// var initialState = JSON.parse(document.getElementById('initial-state').innerHTML)
+
 const auth = new Auth();
 
 class App extends Component {

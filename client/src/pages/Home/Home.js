@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import CreatePost from "../CreatePost";
 import Wrapper from "../../components/Wrapper";
 import "../../pages/Home/Home.css";
+import axios from "axios";
 // import { base } from "../../base";
 // import  * as firebase from "firebase";
 
@@ -135,6 +136,15 @@ class Home extends Component {
     // });
   }
 
+  getTweets() {
+    axios.get("/api/tweets")
+    .then(res => {
+      console.log(res)
+    }
+    )
+    .catch(err => console.log(err));
+  }
+
   // updateblog(blog){
   //   const blogs = {...this.state.blogs};
   //   blogs[blog.id] = blog;
@@ -142,7 +152,7 @@ class Home extends Component {
   // }
 
   componentDidMount() {
-    this.refreshBlogs();
+    this.getTweets();
     // this.blogRef = base.syncState('blogs', {
     //   context: this,
     //   state: 'blogs'

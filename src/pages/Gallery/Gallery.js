@@ -12,7 +12,7 @@ class Gallery extends Component {
   }
   componentDidMount() {
     axios
-      .get('http://res.cloudinary.com/matsi/image/list/nica.json')
+      .get('https://res.cloudinary.com/matsi/image/list/nica.json')
       .then(res => {
         console.log(res.data.resources);
         this.setState({ gallery: res.data.resources });
@@ -30,7 +30,7 @@ class Gallery extends Component {
                         return (
                             <div className="responsive" key={data.public_id}>
                                 <div className="img">
-                                    <a target="_blank" href={`http://res.cloudinary.com/matsi/image/upload/${data.public_id}.jpg`}>
+                                    <a target="_blank" href={`https://res.cloudinary.com/matsi/image/upload/${data.public_id}.jpg`}>
                                         <Image publicId={data.public_id}>
                                             {/* <Transformation
                                                 crop="scale"

@@ -1,0 +1,16 @@
+.card{
+    height: auto;
+}
+
+
+.card-body{
+   overflow:scroll
+}
+.btn-secondary{
+    background: white;
+    border:0;
+}
+
+.btn-secondary:hover{
+   background-color: #9ca4ab3a;
+}

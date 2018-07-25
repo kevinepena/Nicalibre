@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Nav, NavItem, NavLink } from "reactstrap";
 import classnames from "classnames";
-import "bootstrap/dist/css/bootstrap.css";
 import "./Menu.css";
 
 
@@ -50,8 +49,10 @@ export default class Menu extends React.Component {
                 this.toggle("2");
               }}
             >
-              What's going on! &nbsp;&nbsp;
+              <Link to="/forum">
+                Blog &nbsp;&nbsp;
               <i className="fas fa-comments" />
+              </Link>
             </NavLink>
           </NavItem>
 

@@ -12,18 +12,25 @@
     font-size: 1.4em !important;
     border-top: 10px !important;
     list-style: none;
+    
+       }
 
-       
-}
+       .nav-tab.active{
+        border: 0px solid white;
+       }
+
+
+  /* Name of tabs */
   .nav-link {
     position: relative;
     transition: all .5s;
-    color: #aaa;
+    /* color: #aaa; */
+    color: rgb(13, 100, 195);
         
   }
   .nav-item {
-    /* font-family: 'Lato', sans-serif !important; */
-    font-family: 'Kanit', sans-serif !important;
+    font-family: 'Lato', sans-serif !important;
+    /* font-family: 'Kanit', sans-serif !important; */
     font-size: 0.8em;
     letter-spacing: .04em;
      
@@ -51,7 +58,8 @@
   /* on hover text color */
   .nav-link:hover {
     z-index: 1;
-    color:  rgb(13, 100, 195) !important;
+    /* color:  rgb(13, 100, 195) !important; */
+    color: orange;
   
   }
   

@@ -1,98 +1,132 @@
 import React, { Component } from "react";
 import "../Form/Form.css";
-import API from "../../utils/API";
-// import CreatePost from "../../pages/CreatePost" 
+import CreatePost from "../CreatePost";
 
-class Form extends Component {
-  state = {
-    selectedFile: null,
-    title: "",
-    body: "",
-    image: ""
-   };
 
-  fileChangedHandler = event => {
-    this.setState({ selectedFile: event.target.files[0] });
-  };
+class Forum extends Component {
+  constructor() {
+    super();
+    this.state = {
+      blogContent: "",
+      title: "",
+      allBlogs: [],
+      selectedFile: "",
+      fileName: "",
+      downloadURL: "",
+      created: ""
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
 
-  uploadHandler = () => {
-    API.post('my-domain.com/file-upload', this.state.selectedFile)
-    console.log(this.state.selectedFile);
-  };
+  handleSubmit(e) {
+    e.preventDefault();
+    const allBlogsRef = firebase.database().ref("allBlogs");
+  
+    // const storageRef = firebase.storage().ref("blogPictures");
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    console.log(name);
-    this.setState({ [name]: value });
-  };
+    const blog = {
+      title: this.state.title,
+      blogContent: this.state.blogContent,
+      selectedFile: this.state.selectedFile,
+      fileName: this.state.fileName,
 
-  reload(){
-    setTimeout(() => {
-   window.location.reload();
-  }, 1000);
- }
+      created: ""
+    };
+    allBlogsRef.push(blog);
+    this.setState({
+      blogContent: "",
+      title: "",
+      selectedFile: "",
+      fileName: "",
+     
+      created: Date.now()
+    });
+  }
 
-  postBlog = event => {
-    event.preventDefault();
-    const { title, body } = this.state;
-    console.log({ title, body });
-    API.postArticle({ title, body })
-      .then(res => {
-        console.log(res);
-        this.setState({ title: "", body: "", image: "" });
-      }).then(
-       this.reload()
-      )
-      .catch(err => console.log(err));
-  };
+  componentDidMount() {
 
+    const allBlogsRef = firebase
+      .database()
+      .ref("allBlogs")
+      .orderByChild("published")
+      // .limitToLast(5);
+    allBlogsRef.on("value", snapshot => {
+      let allBlogs = snapshot.val();
+    
+      let newState = [];
+      for (let blog in allBlogs) {
+        newState.push({
+          id: blog,
+          title: allBlogs[blog].title,
+          blogContent: allBlogs[blog].blogContent,
+          selectedFile: allBlogs[blog].selectedFile,
+          fileName: allBlogs[blog].fileName,
+          created: allBlogs[blog].created
+        });
+        console.log(allBlogs[blog].created)
+      }
+      this.setState({
+        allBlogs: newState
+      });
+    });
+
+  }
+
+  removeItem(blogId) {
+    const blogRef = firebase.database().ref(`/allBlogs/${blogId}`);
+    blogRef.remove();
+  }
 
   render() {
+    const loggedIn = this.props.auth.isAuthenticated();
+    // const canWrite = this.props.auth.userHasScopes(["write:blog","roles: admin"]);
+
     return (
-      <div className="form-container">
-        <form>
-          <h1>
-            <em>Update name of form here:</em>
-          </h1>
+      <div className="container">
+        <h1> Updates / Trending Now </h1>
 
-         
-          <h5>Insert an Image for your blog</h5>
-          <div>
-          <input className="btn-choose" type="file" onChange={this.fileChangedHandler} />
-          </div>
-          <br/>
-          <div>
-            <button className="btn-upload" onClick={this.uploadHandler}>Upload!</button>
-          </div>
+        <div className="wrapper">
+          <ul>
+            {this.state.allBlogs
+              .slice(0)
+              .reverse()
+              .map(post => {
+                return (
+                  <li key={post.id}>
+                    <p>{post.fileName}</p>
+                    <img src={post.fileName} alt="blog" />
+                    <h3>{post.title}</h3>
+                    <h4>Posted: {post.created}</h4>
+                    <p>
+                      Blog Content: {post.blogContent}
+                      <br />
+                      <br />
+                      {loggedIn ? (
+                        <button onClick={() => this.removeItem(post.id)}>
+                          Remove Post
+                        </button>
+                      ) : (
+                        ""
+                      )}
+                    </p>
+                  </li>
+                );
+              })}
+          </ul>
+        </div>
 
-          <br/>
-
-          <div>
-          <h5>Create your post:</h5>
-            <input
-              name="title"
-              onChange={this.handleInputChange}
-              value={this.title}
-              placeholder={`Add Title to your Post`}
-            />
-          </div>
-          <br/>
-          <div>
-          <h5>Add post content below:</h5>
-            <textarea
-              name="body"
-              onChange={this.handleInputChange}
-              value={this.body}
-              placeholder={`Add content to your post!`}
-            />
-          </div>
-          <div>
-            <button onClick={this.postBlog}>Submit</button>
-          </div>
-        </form>
+        <div className="createpost">
+          {/* if logged in and canWrite, then display CreatePost, otherwise display nothing else */}
+          {loggedIn ? <CreatePost /> : ""}
+        </div>
       </div>
     );
   }
 }
-
-export default Form;
+export default Forum;

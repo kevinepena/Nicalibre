@@ -4,8 +4,6 @@ import CreatePost from "../CreatePost";
 import Wrapper from "../../components/Wrapper";
 import "../../pages/Home/Home.css";
 import axios from "axios";
-// import { base } from "../../base";
-// import  * as firebase from "firebase";
 
 class Home extends Component {
 

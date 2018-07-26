@@ -55,7 +55,7 @@ class Nav extends Component {
 
                 <div className="nav-left-text">
                   <header className="header-container">
-                    <h6 className=" header-item h1i">¡ NicaLibre !</h6>
+                    <h6 className=" header-item h1i">¡ FreeNica !</h6>
 
                     <h5 className="header-item h2i">
                       {" "}
@@ -85,7 +85,7 @@ class Nav extends Component {
                 ) : (
                   <Link to="/">
                     <button className="btn" onClick={this.props.auth.logout}>
-                      Home
+                      HOME
                     </button>
                   </Link>
                 )}
@@ -94,11 +94,11 @@ class Nav extends Component {
               <li className="nav-item nav-link">
                 {!loggedIn ? (
                   <button className="btn" onClick={this.props.auth.login}>
-                    Log In
+                    LOG IN
                   </button>
                 ) : (
                   <button className="btn" onClick={this.props.auth.logout}>
-                    Log Off
+                   LOG OFF
                   </button>
                 )}
 

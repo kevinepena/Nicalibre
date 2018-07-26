@@ -1,6 +1,6 @@
 // what components are we importing?
 
-// import "./Header.css";
+import "./Header.css";
 
 import React from 'react';
 import {
@@ -94,36 +94,7 @@ class Header extends React.Component {
 
     return (
       <div>
-        <style>
-          {
-            `.custom-tag {
-               width: 100% !important;
-                height: 500px;
-    
-              }
-              .slideimage {
-                object-fit: cover !important;
-               width: 100% !important;
-               height: 500px;
-
-                  }
-              .carousel{
-                width: 100% !important;
-                margin: 2em 0;
-              }
-              
-              .caption{
-                font-family: 'Lato', sans-serif !important;
-                font-size: 4vh;
-                font-weight: 600;
-                opacity:1;
-                color: white;
-                text-shadow: 2px 3px 6px black;
-                {/* background:  rgba(255, 255, 255, .5); */}
-                padding: .2em 0 0;
-                }`
-          }
-        </style>
+        
         <Carousel
           activeIndex={activeIndex}
           next={this.next}

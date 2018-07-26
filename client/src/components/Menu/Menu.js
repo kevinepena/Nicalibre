@@ -36,7 +36,7 @@ export default class Menu extends React.Component {
               }}
             >
               <Link to="/" >
-                Home &nbsp; &nbsp;
+                HOME &nbsp; &nbsp;
               <i className="fas fa-home" />
               </Link>
             </NavLink>
@@ -50,7 +50,7 @@ export default class Menu extends React.Component {
               }}
             >
               <Link to="/forum">
-                Blog &nbsp;&nbsp;
+                BLOG &nbsp;&nbsp;
               <i className="fas fa-comments" />
               </Link>
             </NavLink>
@@ -64,7 +64,7 @@ export default class Menu extends React.Component {
               }}
             >
               <Link to="/gallery">
-                Gallery &nbsp;
+                GALLERY &nbsp;
               <i className="fas fa-camera" />
               </Link>
             </NavLink>
@@ -77,7 +77,7 @@ export default class Menu extends React.Component {
               }}
             >
               <Link to="/help">
-                How you can help &nbsp;
+                HOW YOU CAN HELP &nbsp;
               <i className="fas fa-hands-helping" />
               </Link>
             </NavLink>

@@ -23,8 +23,8 @@ class Tweets extends Component {
 
         return (
             <ul className="tweets">{
-                this.state.tweets.map(tweet => {
-                    // console.log(tweet);
+                this.props.tweets.splice(0, 100).map(tweet => {
+                    console.log(tweet);
                     <li className={"tweet" + (tweet.active ? ' active' : '')}>
                         <img src={tweet.avatar} className="avatar" />
                         <blockquote>

@@ -43,6 +43,8 @@ var io = require('socket.io').listen(server);
 
 
 // Set a stream listener for tweets matching tracking keywords
-twit.stream('statuses/filter',{ track: 'SOSNicaragua, GritoPorNicaragua, OEA, FreeNica, NicaLibre, nicaragua'}, function(stream){
+twit.stream('statuses/filter',{ track: 'SOSNicaragua'}, function(stream){
   streamHandler(stream,io);
 });
+
+//, GritoPorNicaragua, OEA, FreeNica, NicaLibre, nicaragua

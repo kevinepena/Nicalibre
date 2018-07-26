@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Nav.css";
 
 class Nav extends Component {
@@ -30,39 +30,36 @@ class Nav extends Component {
 
   render() {
     const loggedIn = this.props.auth.isAuthenticated();
-    // const canWrite = this.props.auth.userHasScopes([
-    //   "write:blog",
-    //   "roles: admin"
-    // ]);
+    const canWrite = this.props.auth.userHasScopes(["write:blog"]);
     const homeLocation = "/";
     const location = document.location.pathname;
 
     return (
       <div>
         <nav className="navbar navbar-expand-lg ">
-        
+
           {/* <div className="nav-left"> */}
 
-                <div className="nav-picture">
-                  {/* <img
+          <div className="nav-picture">
+            {/* <img
                     src={require("./coaNicaragua.png")}
                     id="navimg"
                     alt=""
                     className="navbar-brand"
                     href="/"
                   /> */}
-                </div>
+          </div>
 
-                <div className="nav-left-text">
-                  <header className="header-container">
-                    <h6 className=" header-item h1i">¡ FreeNica !</h6>
+          <div className="nav-left-text">
+            <header className="header-container">
+              <h6 className=" header-item h1i">¡ FreeNica !</h6>
 
-                    <h5 className="header-item h2i">
-                      {" "}
-                      <em>Happening Now</em>
-                    </h5>
-                  </header>
-                </div>
+              <h5 className="header-item h2i">
+                {" "}
+                <em>Happening Now</em>
+              </h5>
+            </header>
+          </div>
           {/* </div> */}
 
           <button
@@ -83,12 +80,12 @@ class Nav extends Component {
                 {location === homeLocation ? (
                   ""
                 ) : (
-                  <Link to="/">
-                    <button className="btn" onClick={this.props.auth.logout}>
-                      HOME
+                    <Link to="/">
+                      <button className="btn">
+                        HOME
                     </button>
-                  </Link>
-                )}
+                    </Link>
+                  )}
               </li>
 
               <li className="nav-item nav-link">
@@ -97,18 +94,19 @@ class Nav extends Component {
                     LOG IN
                   </button>
                 ) : (
-                  <button className="btn" onClick={this.props.auth.logout}>
-                   LOG OFF
+                    <button className="btn" onClick={this.props.auth.logout}>
+                      LOG OFF
                   </button>
-                )}
+                  )}
 
-                {/* {loggedIn && canWrite ? (
+                {loggedIn && canWrite ? (
                   <Link to="/createpost">
-                    <button>Create a Post&nbsp; </button>
+                    <div className="btn">Create a Post&nbsp; </div>
                   </Link>
                 ) : (
-                  ""
-                )}
+                    ""
+                  )}
+                {/* 
                 {loggedIn ? <Link to="/profile">Profile&nbsp;</Link> : ""} */}
               </li>
             </ul>

@@ -23,7 +23,7 @@ class Gallery extends Component {
         return (
             <div className="main">
                 <h1 className="warning">Graphic Content : Proceed with Caution</h1>
-                <div className="gallery zoom-grey">
+                <div className="gallery ">
                     <CloudinaryContext cloudName="matsi">
                         {
                             this.state.gallery.map(data => {

@@ -1,22 +1,23 @@
-
-
-.card{
-    height: auto;
-    min-height: 268px;
-    margin-left: -15px;
+.app {
+padding:0;
 }
 
-
-.card-body{
-   overflow:scroll
-}
-.btn-secondary{
-    background: white;
-    border:0;
-}
-
-.btn-secondary:hover{
-   background-color: #9ca4ab3a;
+.card {
+  height: auto;
+  min-height: 268px;
+  /* margin-left: -15px; */
+  margin: 0;
+  width: 100vw;
 }
 
+.card-body {
+  overflow: hidden;
+}
+.btn-secondary {
+  background: white;
+  border: 0;
+}
 
+.btn-secondary:hover {
+  background-color: #9ca4ab3a;
+}

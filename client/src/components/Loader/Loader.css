@@ -8,12 +8,11 @@
 {
     max-height: 0;
     margin: 0;
-
     -webkit-transition: 1s all ease;
-       -moz-transition: 1s all ease;
-        -ms-transition: 1s all ease;
-         -o-transition: 1s all ease;
-            transition: 1s all ease;
+    -moz-transition: 1s all ease;
+    -ms-transition: 1s all ease;
+    -o-transition: 1s all ease;
+    transition: 1s all ease;
 }
 
 .loader.active img

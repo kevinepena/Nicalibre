@@ -4,7 +4,7 @@ import "./NotificationBar.css"
 const NotificationBar = props => (
  
     <div className={"notification-bar" + (props.count > 0 ? ' active' : '')}>
-        <p>There are {props.count} new tweets! <a href="#top" onClick={props.onShowNewTweets}>Click here to see them.</a></p>
+        <p>There are {props.count} new tweets! <a onClick={props.onShowNewTweets}>Click here to see them.</a></p>
     </div>
 );
 

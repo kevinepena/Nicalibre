@@ -3,17 +3,13 @@
 {
     font-size: 13px;
     font-weight: bold;
-
-    position: fixed;
-    top: -60px;
-
+    position: relative;
     width: 100%;
-
     -webkit-transition: 300ms top ease;
-       -moz-transition: 300ms top ease;
-        -ms-transition: 300ms top ease;
-         -o-transition: 300ms top ease;
-            transition: 300ms top ease;
+    -moz-transition: 300ms top ease;
+    -ms-transition: 300ms top ease;
+    -o-transition: 300ms top ease;
+    transition: 300ms top ease;
     text-align: center;
 
     color: white;
@@ -22,7 +18,7 @@
 
 .notification-bar.active
 {
-    top: 0;
+
 }
 
 .notification-bar a

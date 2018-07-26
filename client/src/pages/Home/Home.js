@@ -210,11 +210,9 @@ class Home extends Component {
     //   })
     //   .catch(err => console.log(err));
   };
-
   render() {
     // const loggedIn = this.props.auth.isAuthenticated();
     // const canWrite = this.props.auth.userHasScopes(["write:blog","roles: admin"]);
-
     return (
       <div className="container-home">
         {/* <div> Check console to show current location of page</div>
@@ -224,11 +222,9 @@ class Home extends Component {
         ) : (
           <button onClick={this.props.auth.logout}>Log Off</button>
         )} */}
-
         {/* <Link to="/">
           <button>Home&nbsp; </button>
         </Link>
-
         {loggedIn && canWrite ? (
           <Link to="/createpost">
             <button>Create a Post&nbsp; </button>
@@ -237,23 +233,18 @@ class Home extends Component {
           ""
         )}
         {loggedIn ? <Link to="/profile">Profile&nbsp;</Link> : ""}  */}
-
         <h1 className="home-h1"> Updates / Trending Now </h1>
-
         <div className="card-container">
           <Wrapper>
             <div className="left">
             </div>
-            <div className="right">
-              <section id="react-app">
-                {/* {{ markup }} */}
-                <div className="tweets-app">
-                  <Tweets tweets={this.state.tweets} />
-                  <Loader paging={this.state.paging} />
-                  <NotificationBar count={this.state.count} onShowNewTweets={this.showNewTweets} />
-                </div>
-              </section>
-            </div>
+            <section className="tweets-app">
+              <div className="notificationBar">
+                <NotificationBar count={this.state.count} onShowNewTweets={this.showNewTweets} />
+              </div>
+              <Tweets tweets={this.state.tweets} />
+              <Loader paging={this.state.paging} />
+            </section>
           </Wrapper>
         </div>
       </div>

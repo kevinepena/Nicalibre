@@ -4,18 +4,19 @@
     border-bottom: 4px solid rgb(13, 100, 195) !important;
     padding-bottom: 2px;
     position: relative;
-
+  
 }
 .nav-tabs {
   display: grid;
   grid-gap: 0;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
-  font-size: 1.3em !important;
+  font-size: 1.5em !important;
   /* list-style: none; */
-
+font-weight: 900;
   font-family: "Raleway", sans-serif !important;
   top: 0;
-  background: rgba(13, 116, 195, 0.173) ;
+  background-color: rgba(255, 166, 0, 0.372);
+  /* background: rgba(13, 116, 195, 0.173) ; */
  
 }
 

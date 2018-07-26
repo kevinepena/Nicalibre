@@ -79,7 +79,7 @@ class Home extends Component {
     // const canWrite = this.props.auth.userHasScopes(["write:blog","roles: admin"]);
 
     return (
-      <div className="container">
+      <div className="container-home">
         {/* <div> Check console to show current location of page</div>
       
         {!loggedIn ? (

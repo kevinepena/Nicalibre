@@ -15,6 +15,7 @@
 }
 .home-h1{
   background: none;
+  text-align: center
 }
 /* box containing all posts */
 .card-container {

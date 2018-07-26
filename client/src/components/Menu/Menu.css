@@ -11,7 +11,23 @@
    border: 10px !important;
 }
 
-.nav-tab, a{
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+.nav-tab{
   /* border: 0px solid white; */
   color: rgb(13, 100, 195) !important;
   text-decoration: none;

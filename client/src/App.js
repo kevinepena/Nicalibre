@@ -12,6 +12,7 @@ import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import CreatePost from "./pages/CreatePost";
 import Forum from "./pages/Forum";
+import Footer from "./components/Footer"
 
 import Callback from "./pages/Callback";
 import Profile from "./pages/Profile";
@@ -123,9 +124,12 @@ class App extends Component {
               }}
             />
           </div>
+          <Footer/>
         </div>
       </Router>
+      
     );
+ 
   }
 }
 export default App;

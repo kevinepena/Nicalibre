@@ -1,5 +1,9 @@
+
+
 .card{
     height: auto;
+    min-height: 268px;
+    margin-left: -15px;
 }
 
 
@@ -14,3 +18,5 @@
 .btn-secondary:hover{
    background-color: #9ca4ab3a;
 }
+
+

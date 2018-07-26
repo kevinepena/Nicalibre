@@ -14,6 +14,7 @@
 .nav-tab, a{
   /* border: 0px solid white; */
   color: rgb(13, 100, 195) !important;
+  text-decoration: none;
 }
 
 .nav-tab:active{

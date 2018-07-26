@@ -15,7 +15,7 @@ div.img:hover {
 div.img img {
   width: 100%;
   height: 100%;
-  /* height: auto; */
+
   position: absolute;
   left:0;
   padding: 2%;
@@ -25,6 +25,9 @@ div.img img {
 
 }
 
+a{
+  text-decoration: none;
+}
 div.desc {
   padding: 15px;
   text-align: center;

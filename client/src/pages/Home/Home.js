@@ -101,7 +101,7 @@ class Home extends Component {
         )}
         {loggedIn ? <Link to="/profile">Profile&nbsp;</Link> : ""}  */}
 
-        <h1> Updates / Trending Now </h1>
+        <h1 className="home-h1"> Updates / Trending Now </h1>
 
         <div className="card-container">
           <Wrapper>

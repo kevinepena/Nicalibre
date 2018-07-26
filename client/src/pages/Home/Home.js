@@ -10,15 +10,6 @@ import io from 'socket.io-client';
 
 
 class Home extends Component {
-
-  constructor(props) {
-    super(props);
-    this.addTweet = this.addTweet.bind(this);
-    this.showNewTweets = this.showNewTweets.bind(this);
-    this.loadPagedTweets = this.loadPagedTweets.bind(this);
-  }
-
-
   state = {
     tweets: [],
     count: 0,
@@ -27,6 +18,19 @@ class Home extends Component {
     skip: 0,
     done: false
   };
+
+  constructor(props) {
+    super(props);
+    this.addTweet = this.addTweet.bind(this);
+    this.showNewTweets = this.showNewTweets.bind(this);
+    this.loadPagedTweets = this.loadPagedTweets.bind(this);
+    this.checkWindowScroll = this.checkWindowScroll.bind(this);
+    // this.getPage = this.getPage.bind(this);
+
+  }
+
+
+
 
   // refreshBlogs() {
   //   console.log("this should go!");
@@ -174,8 +178,8 @@ class Home extends Component {
       // Set application state (Paging, Increment page)
       this.setState({ paging: true, page: this.state.page + 1 });
 
-      // Get the next page of tweets from the server
-      this.getPage(this.state.page);
+      // // Get the next page of tweets from the server
+      // this.getPage(this.state.page);
 
     }
   }

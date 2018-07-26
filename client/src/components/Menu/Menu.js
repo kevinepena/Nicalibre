@@ -29,58 +29,66 @@ export default class Menu extends React.Component {
       <div>
         <Nav tabs className="nav-tabs">
           <NavItem className="nav-item">
-            <NavLink
-              className={classnames({ active: this.state.activeTab === "1" })}
-              onClick={() => {
-                this.toggle("1");
-              }}
-            >
-              <Link to="/" >
+            <Link to="/" >
+              <NavLink
+                className={classnames({ active: this.state.activeTab === "1" })}
+                onClick={() => {
+                  this.toggle("1");
+                }}
+              >
+
                 HOME &nbsp; &nbsp;
               <i className="fas fa-home" />
-              </Link>
-            </NavLink>
+
+              </NavLink>
+            </Link>
           </NavItem>
 
           <NavItem className=".nav-item">
-            <NavLink
-              className={classnames({ active: this.state.activeTab === "2" })}
-              onClick={() => {
-                this.toggle("2");
-              }}
-            >
-              <Link to="/forum">
+            <Link to="/forum">
+              <NavLink
+                className={classnames({ active: this.state.activeTab === "2" })}
+                onClick={() => {
+                  this.toggle("2");
+                }}
+              >
+
                 BLOG &nbsp;&nbsp;
               <i className="fas fa-comments" />
-              </Link>
-            </NavLink>
+
+              </NavLink>
+            </Link>
           </NavItem>
 
           <NavItem className=".nav-item">
-            <NavLink
-              className={classnames({ active: this.state.activeTab === "3" })}
-              onClick={() => {
-                this.toggle("3");
-              }}
-            >
-              <Link to="/gallery">
+            <Link to="/gallery">
+              <NavLink
+                className={classnames({ active: this.state.activeTab === "3" })}
+                onClick={() => {
+                  this.toggle("3");
+                }}
+              >
+
                 GALLERY &nbsp;
               <i className="fas fa-camera" />
-              </Link>
-            </NavLink>
+
+              </NavLink>
+            </Link>
           </NavItem>
           <NavItem className=".nav-item">
-            <NavLink
-              className={classnames({ active: this.state.activeTab === "4" })}
-              onClick={() => {
-                this.toggle("4");
-              }}
-            >
-              <Link to="/help">
+            <Link to="/help">
+              <NavLink
+                className={classnames({ active: this.state.activeTab === "4" })}
+                onClick={() => {
+                  this.toggle("4");
+                }}
+              >
+
                 HOW YOU CAN HELP &nbsp;
               <i className="fas fa-hands-helping" />
-              </Link>
-            </NavLink>
+
+              </NavLink>
+            </Link>
           </NavItem>
 
           {/* <NavItem>

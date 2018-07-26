@@ -159,8 +159,8 @@ class Forum extends Component {
             .reverse()
             .map(post => {
               return (
-                <div key={post.id}>
-                  <Card>
+                <div key={post.id} className="row">
+                  <Card >
                     <CardHeader>
                       {post.title}
                       {loggedIn ? (

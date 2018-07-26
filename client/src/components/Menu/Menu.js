@@ -20,6 +20,7 @@ export default class Menu extends React.Component {
     if (this.state.activeTab !== tab) {
       this.setState({
         activeTab: tab
+        
       });
     }
     console.log(this.state.activeTab)

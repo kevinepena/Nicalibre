@@ -82,12 +82,13 @@ div.img img {
 .container {
   padding-top: 50px;
 }
-
-h1 {
+h1{
   text-align: center;
-  background: red;
+  /* background: red; */
   width: 100%;
-  margin-top: 10px !important;
+  padding: 20px !important;
+  color: white;
+ 
 }
 
 .upload-button {
@@ -114,10 +115,7 @@ h1 {
   line-height: 2vh;
 }
 
-.warning {
-  padding: 20px;
-  color: white;
-}
+
 
 .warning {
   padding: 20px;
@@ -155,7 +153,7 @@ h1 {
 
 .zoom {
   /* padding: 50px; */
-  transition: transform 0.2s;
+  /* transition: transform 0.2s; */
   /* width: 150px; */
   height: 100px;
   /* height:100%; */
@@ -166,24 +164,10 @@ h1 {
 }
 
 .zoom:hover {
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
-  transform: scale(1.5);
+  transform: scale(1.2);
   z-index: 1;
   opacity: 1;
-
-  width: 50%;
   height: 100%;
-
   -webkit-filter: none;
-  filter:none;
+  filter: none;
 }
-
-/* .zoom-grey:hover > .overlay {
-  width:100%;
-  height:100%;
-  position:absolute;
-  background-color:#000;
-  opacity:0.5;
-  border-radius:30px;
-} */

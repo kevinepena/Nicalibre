@@ -1,22 +1,42 @@
-
-
-.card{
-    height: auto;
-    min-height: 268px;
-    margin-left: -15px;
+.app {
+padding:0;
+/* justify-content: flex-start; */
 }
 
-
-.card-body{
-   overflow:scroll
-}
-.btn-secondary{
-    background: white;
-    border:0;
+.wrapper-container{
+  margin: 5vw;
 }
 
-.btn-secondary:hover{
-   background-color: #9ca4ab3a;
+.h1Title{
+  margin: 20px;
 }
 
+.card {
+  height: 500px;
+  min-height: 268px;
+  /* margin-left: -15px; */
+  margin: 15px;
+  width: 100%;
 
+}
+
+.card-body {
+  overflow: scroll !important;
+}
+
+.collapse{
+  width: 100%;
+}
+
+/* CardHeader{
+  
+} */
+
+.btn-secondary {
+  background: NONE;
+  border: 0;
+}
+
+.btn-secondary:hover {
+  background-color: #9ca4ab3a;
+}

@@ -83,7 +83,7 @@ export default class Menu extends React.Component {
                 }}
               >
 
-                HOW YOU CAN HELP &nbsp;
+                SUPPORT &nbsp;
               <i className="fas fa-hands-helping" />
 
               </NavLink>

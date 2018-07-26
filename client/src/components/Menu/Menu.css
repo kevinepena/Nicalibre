@@ -1,51 +1,61 @@
 /* NAVIGATION */
 
+.nav{
+    border-bottom: 4px solid rgb(13, 100, 195) !important;
+    padding-bottom: 2px;
+    position: relative;
+
+}
 .nav-tabs {
   display: grid;
   grid-gap: 0;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
   font-size: 1.3em !important;
-   list-style: none;
-   color: rgb(13, 100, 195) !important;
-   font-family: 'Raleway', sans-serif !important;
-   border: 10px !important;
+  /* list-style: none; */
+
+  font-family: "Raleway", sans-serif !important;
+  top: 0;
+  background: rgba(13, 116, 195, 0.173) ;
+ 
 }
+
 
 a:link {
   text-decoration: none;
+
 }
 
 a:visited {
   text-decoration: none;
+  color: rgb(13, 100, 195) ;
 }
 
 a:hover {
   text-decoration: none;
+  color:orange !important;
+  
 }
 
 a:active {
   text-decoration: none;
+color:orange
+
+
 }
 
-.nav-tab{
-  /* border: 0px solid white; */
-  color: rgb(13, 100, 195) !important;
-  text-decoration: none;
+
+.nav-item {
+  font-family: "Lato", sans-serif !important;
+  font-size: 0.8em;
+  color: orange !important;
 }
 
-.nav-tab:active{
-  border:0
-}
 /* Name of tabs */
 .nav-link {
   position: relative;
   transition: all 0.5s;
-  /* color: #aaa; */
-  /* color: rgb(13, 100, 195); */
-}
-.nav-item {
-  font-family: 'Raleway', sans-serif !important;
-  font-size: 0.8em;
+  border: 0 !important;
+  
 }
 
 .nav-link:after,
@@ -54,13 +64,14 @@ a:active {
   position: absolute;
   bottom: 0;
   left: 0;
-  right: 0;
+ right: 0;
   margin: auto;
   width: 0%;
   content: ".";
   color: transparent;
   background: rgb(235, 222, 176) !important;
-  height: 0.09em  !important;
+  padding-bottom: .3vh;
+  height: 0.15em !important;
 }
 .fas:hover,
 .fas:after,
@@ -68,25 +79,30 @@ a:active {
   color: black;
 }
 
+
+.nav-tab:hover {
+  background:white ;
+  color:orange !important;
+  text-decoration: none;
+}
 /* on hover text color */
 .nav-link:hover,
 .btn:hover {
-  z-index: 1;
-   color:orange !important;
-  
-}
-
+  z-index: 0;
+  background:white !important;
+  color:orange !important;
+ }
 
 .nav-link:hover:after {
   z-index: -10;
   width: 100%;
   font-weight: 900;
   opacity: 1;
-  border:0;
-}
+  border: none !important;
+  
+ }
 
 /* Keyframes */
-
 
 @keyframes slideInFromTop {
   0% {

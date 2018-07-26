@@ -1,38 +1,32 @@
-/* ./public/style.css */
-
-/* Inspired by W3Schools */
 body {
   background: white;
 }
 /* div.img {
   box-shadow: inset 0px 0px 40px 40px #db32a5 !important;
-}
+}*/
 
-div.img:hover {
+/* div.img:hover {
   border: 1px solid #777;
-} */
+}  */
 
 div.img img {
   width: 100%;
   height: 100%;
-
   position: absolute;
-  left:0;
+  left: 0;
   padding: 2%;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: .1em .1em  .1em .1em   rgba(203, 202, 202, 0.488);
-
+  box-shadow: 0 0.05em rgba(82, 82, 82, 0.153);
 }
 
-
-div.desc {
+/* div.desc {
   padding: 15px;
   text-align: center;
   position: absolute;
   bottom:0;
   text-shadow: 2px 3px 4px black;
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -43,32 +37,25 @@ div.desc {
   float: left;
   width: 24.99999%;
   /* height: 24.99999% !important; */
-  height: 0;
+
   position: relative;
   padding-bottom: 25%;
   /* padding: 25% 10px; */
-  /* object-position: cover !important */
-  
-  
-
-}
-
-.img{
-  object-position: cover !important
+  object-position: cover;
 }
 
 @media only screen and (max-width: 700px) {
   .responsive {
     width: 49.99999%;
     margin: 6px 0;
-    object-position: cover !important
+    object-position: cover !important;
   }
 }
 
 @media only screen and (max-width: 500px) {
   .responsive {
     width: 100%;
-    object-position: cover !important
+    object-position: cover !important;
   }
 }
 
@@ -84,6 +71,7 @@ div.desc {
   padding: 10px 20px;
   justify-content: center !important;
   align-content: center !important;
+  background-origin: content-box;
 }
 
 .upload {
@@ -131,28 +119,71 @@ h1 {
   color: white;
 }
 
-
-
-/* .container-fluid {
-  width: 100%;
+.warning {
+  padding: 20px;
+  -webkit-animation-name: warning; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 12s; /* Safari 4.0 - 8.0 */
+  animation-name: warning;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
-.gallery-container {
-  padding-top: 0rem;
-  justify-content: center;
-  padding-left: 200px;
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes warning {
+  from {
+    background-color: red;
+    color: white;
+  }
+  to {
+    background-color: rgb(249, 249, 249);
+    color: red;
+  }
 }
 
-
-.img-container {
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 1.1rem;
-
+/* Standard syntax */
+@keyframes warning {
+  from {
+    background-color: white;
+    color: white;
+  }
+  to {
+    background-color: red;
+    color: white;
+  }
 }
-.image {
-  max-width: 250px;
-  height: 250px;
-  border-radius: 5px;
-  object-fit: cover;
+
+.zoom {
+  /* padding: 50px; */
+  transition: transform 0.2s;
+  /* width: 150px; */
+  height: 100px;
+  /* height:100%; */
+  margin: 0 auto;
+  opacity: 0.5;
+  -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+  filter: blur(5px);
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+  z-index: 1;
+  opacity: 1;
+
+  width: 50%;
+  height: 100%;
+
+  -webkit-filter: none;
+  filter:none;
+}
+
+/* .zoom-grey:hover > .overlay {
+  width:100%;
+  height:100%;
+  position:absolute;
+  background-color:#000;
+  opacity:0.5;
+  border-radius:30px;
 } */

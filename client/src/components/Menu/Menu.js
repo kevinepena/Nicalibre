@@ -28,7 +28,7 @@ export default class Menu extends React.Component {
     return (
       <div>
         <Nav tabs className="nav-tabs">
-          <NavItem className=".nav-item">
+          <NavItem className="nav-item">
             <NavLink
               className={classnames({ active: this.state.activeTab === "1" })}
               onClick={() => {

@@ -23,13 +23,13 @@ class Gallery extends Component {
         return (
             <div className="main">
                 <h1 className="warning">Graphic Content : Proceed with Caution</h1>
-                <div className="gallery">
+                <div className="gallery zoom-grey">
                     <CloudinaryContext cloudName="matsi">
                         {
                             this.state.gallery.map(data => {
                                 return (
-                                    <div className="responsive" key={data.public_id}>
-                                        <div className="img">
+                                    <div className="responsive zoom overlay" key={data.public_id}>
+                                        <div className="img ">
                                             <a target="_blank" href={`https://res.cloudinary.com/matsi/image/upload/${data.public_id}.jpg`}>
                                                 <Image publicId={data.public_id}>
                                                     {/* <Transformation

@@ -19,7 +19,7 @@
   font-weight: 900;
   text-transform: uppercase;
   color: rgb(13, 100, 195) !important;
-  font-size: 2.5vh;
+  font-size: 2vh;
   font-family: 'Raleway', sans-serif !important;
   padding-bottom: .45vh !important;
   border-bottom: 0.09em solid rgb(235, 222, 176);
@@ -36,7 +36,7 @@
   font-family: "Lato", sans-serif !important;
   color: orange !important;
   padding-top: 0 !important;
-  font-size: 1em !important;
+  font-size: .5em !important;
   letter-spacing: .035vw
 }
 

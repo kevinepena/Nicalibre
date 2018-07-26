@@ -52,7 +52,7 @@ class Nav extends Component {
 
           <div className="nav-left-text">
             <header className="header-container">
-              <h6 className=" header-item h1i">¡ FreeNica !</h6>
+              <h6 className="header-item h1i">¡ FreeNica !</h6>
 
               <h5 className="header-item h2i">
                 {" "}

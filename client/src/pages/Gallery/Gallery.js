@@ -14,7 +14,6 @@ class Gallery extends Component {
         axios
             .get('https://res.cloudinary.com/matsi/image/list/nica.json')
             .then(res => {
-                console.log(res.data.resources);
                 this.setState({ gallery: res.data.resources });
             });
     }

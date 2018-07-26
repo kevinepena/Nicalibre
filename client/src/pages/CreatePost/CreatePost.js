@@ -1,96 +1,71 @@
 import React, { Component } from "react";
+import API from "../../utils/API";
 // import { withRouter } from "react-router-dom";
 
 class CreatePost extends Component {
+
+
   state = {
-    selectedFile: null,
-    fileName:"",
-    title: "",
-    body: "",
-    image: " https://images.all-free-download.com/images/graphicthumb/beautiful_scenic_03_hd_picture_166318.jpg"
-  };
-
-  refreshBlogs() {
-    console.log("this should go!");
- 
-  };
-
-  reload(){
-     setTimeout(() => {
-    window.location.reload();
-   }, 1000);
-  };
-
-  componentDidMount() {
-    this.refreshBlogs();
+    header: "",
+    src: "",
+    link: "",
+    caption: "",
   };
 
   handleInputChange = event => {
     const { name, value } = event.target;
-    console.log(name);
     this.setState({ [name]: value });
   };
 
   postBlog = event => {
     event.preventDefault();
-    const { title, body } = this.state;
-    console.log({ title, body });
+    const { header, src, link, caption } = this.state;
+    API.saveArticle({ header, src, link, caption });
+    this.setState({
+      header: "",
+      src: "",
+      link: "",
+      caption: ""
+    })
   };
-
-
-  // image upload
-
-  fileChangedHandler = event => {
-    this.setState({ selectedFile: event.target.files[0] });
-  };
-
-  uploadHandler = () => {
-       console.log(this.state.selectedFile);
-  };
-
 
   render() {
     return (
       <div>
-          <form>
+        <form>
           <h1>
-            <em>Update name of form here:</em>
+            <em>Update carousel articles:</em>
           </h1>
-         
-          <h5>Insert an Image for your blog</h5>
+          <br />
           <div>
-          <input className="btn-choose" type="file" name="fileName"  
-          value ={this.title} 
-          onChange={this.props.fileChangedHandler} />
-          </div>
-          <br/>
-          {/* <div>
-            <button className="btn-upload" onClick={this.uploadHandler}>Upload!</button>
-          </div> */}
-
-          <br/>
-
-          <div>
-          <h5>Create your post:</h5>
+            <h5>Create your post:</h5>
             <input
-              name="title"
+              name="header"
               onChange={this.handleInputChange}
-              value={this.title}
-              placeholder={`Add Title to your Post`}
+              value={this.header}
+              placeholder={`Title`}
+            />
+            <input
+              name="link"
+              onChange={this.handleInputChange}
+              value={this.link}
+              placeholder={`Link`}
+            />
+            <input
+              name="src"
+              onChange={this.handleInputChange}
+              value={this.src}
+              placeholder={`Image link`}
+            />
+            <input
+              name="caption"
+              onChange={this.handleInputChange}
+              value={this.caption}
+              placeholder={`Source`}
             />
           </div>
-          <br/>
           <div>
-          <h5>Add post content below:</h5>
-            <textarea
-              name="body"
-              onChange={this.handleInputChange}
-              value={this.body}
-              placeholder={`Add content to your post!`}
-            />
-          </div>
-          <div>
-            <button onClick={this.postBlog && this.uploadHandler}>Submit</button>
+            <button className="btn" onClick={this.postBlog}>Submit</button>
           </div>
         </form>
       </div>

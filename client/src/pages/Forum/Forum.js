@@ -103,12 +103,14 @@ class Forum extends Component {
     return (
       <div className="app">
         <div className="wrapper-forum">
-          <h1>Testing Blog Posts</h1>
+          <h1>Blogs: Worth a Read</h1>
 
           <div className="container-forum">
             {loggedIn ? (
               <div>
                 <form onSubmit={this.handleSubmit}>
+                  <div />
+
                   <label htmlFor="post-title">Add Title</label>
                   <div>
                     <input
@@ -121,25 +123,29 @@ class Forum extends Component {
                     <br />
                   </div>
 
-                  <label htmlFor="post-blogContent">Add Blog Content:</label>
-                  <br />
-                  <input
-                    type="text"
-                    name="blogContent"
-                    placeholder="What are we sharing?"
-                    onChange={this.handleChange}
-                    value={this.state.blogContent}
-                  />
+                  <div>
+                    <label htmlFor="post-blogContent">Add Blog Content:</label>
+                    <br />
+                    <input
+                      type="text"
+                      name="blogContent"
+                      placeholder="What are we sharing?"
+                      onChange={this.handleChange}
+                      value={this.state.blogContent}
+                    />
+                  </div>
 
-                  <label htmlFor="post-blogImage">Add Image URL:</label>
-                  <br />
-                  <input
-                    type="text"
-                    name="imageUrl"
-                    placeholder="Insert image URL with http://..."
-                    value={this.state.imageUrl}
-                    onChange={this.handleChange}
-                  />
+                  <div>
+                    <label htmlFor="post-blogImage">Add Image URL:</label>
+                    <br />
+                    <input
+                      type="text"
+                      name="imageUrl"
+                      placeholder="Insert image URL with http://..."
+                      value={this.state.imageUrl}
+                      onChange={this.handleChange}
+                    />
+                  </div>
 
                   <br />
                   <br />
@@ -147,12 +153,12 @@ class Forum extends Component {
                 </form>
               </div>
             ) : (
-                ""
-              )}
+              ""
+            )}
           </div>
         </div>
 
-        <div className="wrapper container ">
+        <div className="wrapper-container ">
           {/* <CardDeck> */}
           {this.state.allBlogs
             .slice(0)
@@ -160,24 +166,25 @@ class Forum extends Component {
             .map(post => {
               return (
                 <div key={post.id} className="row">
-                  <Card >
+                  <Card>
                     <CardHeader>
                       {post.title}
                       {loggedIn ? (
                         <Button
                           onClick={() => this.removeItem(post.id)}
-                          color="danger" className="float-right"
+                          TEXT-color="danger"
+                          className="float-right"
                         >
                           Delete Post <i className="far fa-trash-alt" />
                         </Button>
                       ) : (
-                          ""
-                        )}
+                        ""
+                      )}
                     </CardHeader>
                     <CardImg
                       top
                       width="100%"
-                    // src="{post.imageUrl} alt={post.title} "
+                      // src="{post.imageUrl} alt={post.title} "
                     />
                     <CardBody>
                       <CardText>{post.blogContent}</CardText>
@@ -206,7 +213,8 @@ class Forum extends Component {
                                     type="textarea"
                                     name="text"
                                     id="exampleText"
-                                    autoFocus defaultValue={this.props.commentText}
+                                    autoFocus
+                                    defaultValue={this.props.commentText}
                                   />
                                   <CardFooter>
                                     <Button>
@@ -216,14 +224,13 @@ class Forum extends Component {
                                     </Button>
                                   </CardFooter>
                                 </Form>
-
                               </CardBody>
                             </Card>
                           </Collapse>
                         </div>
                       ) : (
-                          ""
-                        )}
+                        ""
+                      )}
                     </CardFooter>
                   </Card>
                 </div>

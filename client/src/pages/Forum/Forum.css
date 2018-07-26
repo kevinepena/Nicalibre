@@ -1,20 +1,39 @@
 .app {
 padding:0;
+/* justify-content: flex-start; */
+}
+
+.wrapper-container{
+  margin: 5vw;
+}
+
+.h1Title{
+  margin: 20px;
 }
 
 .card {
-  height: auto;
+  height: 500px;
   min-height: 268px;
   /* margin-left: -15px; */
-  margin: 0;
-  width: 100vw;
+  margin: 15px;
+  width: 100%;
+
 }
 
 .card-body {
-  overflow: hidden;
+  overflow: scroll !important;
 }
+
+.collapse{
+  width: 100%;
+}
+
+/* CardHeader{
+  
+} */
+
 .btn-secondary {
-  background: white;
+  background: NONE;
   border: 0;
 }
 

@@ -29,12 +29,9 @@ class Header extends React.Component {
   componentWillMount() {
     API.getArticles()
       .then(res => {
-        console.log(res.data)
         this.setState({ items: res.data })
       })
       .catch(err => console.log(err))
-
-    console.log(this.state.items)
   }
 
   onExiting() {

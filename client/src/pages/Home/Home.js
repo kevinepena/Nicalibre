@@ -170,8 +170,6 @@ class Home extends Component {
     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     var s = (document.body.scrollTop || document.documentElement.scrollTop || 0);
     var scrolled = (h + s) > document.body.offsetHeight;
-
-    console.log(scrolled)
     // If scrolled enough, not currently paging and not complete...
     if (scrolled && !this.state.paging && !this.state.done) {
 

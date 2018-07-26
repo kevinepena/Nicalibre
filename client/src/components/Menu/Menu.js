@@ -16,14 +16,12 @@ export default class Menu extends React.Component {
   }
 
   toggle(tab) {
-    console.log(this.state.activeTab)
     if (this.state.activeTab !== tab) {
       this.setState({
         activeTab: tab
-        
+
       });
     }
-    console.log(this.state.activeTab)
   }
   render() {
     return (

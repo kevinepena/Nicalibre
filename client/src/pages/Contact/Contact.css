@@ -1,14 +1,36 @@
+.container-contact{
+  padding:  5vh 70px !important;
+/* background: rgba(13, 116, 195, 0.454) ; */
+}
 
+.myClassname{
+  position: relative;
+  display: initial;
+  height: 20vh;
+  width: 90vw;
+  margin-bottom: 5vh;
+}
 
-button.submit-button{
+h1{
+  background: white !important;
+  color: rgb(13, 100, 195);
+  
+}
+
+.form-text{
+  margin-bottom: 5vh;
+
+}
+
+btn.submit-button{
   color: rgb(13, 100, 195);
   border-radius: .3em;
   /* border: 0; */
-  border: 0.1em solid rgba(199, 197, 197, 0.482) !important;
+  /* border: 0.1em solid rgba(199, 197, 197, 0.482) !important; */
   padding: 0.3em 1.5em;
   margin: 0px 4px;
   
-  font-family: 'Kanit', sans-serif !important;
+  font-family: 'Raleway', sans-serif !important;
 
   animation: 1s ease-out 0s 1;
 
@@ -33,7 +55,7 @@ button.submit-button:before {
 
 .submit-button:hover{
     z-index: 1;
-    color:  rgb(215, 5, 5) !important;
+    color:  orange(215, 5, 5) !important;
   }
 
   .submit-button:hover:after {
@@ -41,4 +63,5 @@ button.submit-button:before {
     width: 100%;
     font-weight: 900;
     opacity: 1;
+    border:0 !important;
   }

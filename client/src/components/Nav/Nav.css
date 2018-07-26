@@ -1,34 +1,15 @@
 
-
 /* NAVIGATION */
+
 .navbar {
-  width: 95%;
+  /* width: 95%; */
   /* box-shadow: 0px 5px 0px #dedede; */
   animation: 1s ease-out 0s 1 slideInFromTop;
   padding:0 ;
-  margin-top: 2vh !important;
-  
-}
-.nav-left {
- 
-  /* margin-left: 4px;
-  
-  padding: 20px 0; */
-      padding: 0.3em 5.5em !important;
- 
-}
+  margin: 1.45vh 2.5vh   !important;
+  margin-top: 2.2vh !important;
+   height: 4vh;
 
-#navimg {
-  width: 55px !important;
-  height: 55px !important;
-  object-fit: contain !important;
-
-}
-
-
-.nav-left-text, .nav-picture {
-  float: left;
-  height: 50px;
 }
 
 .h1i {
@@ -40,6 +21,7 @@
   padding-bottom: .45vh !important;
   border-bottom: 0.09em solid rgb(235, 222, 176);
   margin-bottom: .2vh;
+  letter-spacing: .12vw;
   
 }
 
@@ -51,7 +33,8 @@
   font-family: "Lato", sans-serif !important;
   color: orange !important;
   padding-top: 0 !important;
-  font-size: 0.8em !important;
+  font-size: 1em !important;
+  letter-spacing: .035vw
 }
 
 .nav-link {
@@ -60,7 +43,7 @@
 }
 
 .nav-item {
-  font-family: "Kanit", sans-serif !important;
+  /* font-family: "Kanit", sans-serif !important; */
   font-size: 0.8em;
 }
 
@@ -82,8 +65,8 @@
 .nav-link:hover,
 .btn:hover {
   z-index: 1;
-  /* color: rgb(215, 5, 5) !important; */
-  color:orange;
+   color:orange;
+   border:0
 }
 
 .nav-link:hover:after {
@@ -94,15 +77,8 @@
 }
 
 .btn {
-  /* rgba(7, 129, 235, 0.235) */
-  color: rgb(13, 100, 195);
-  border-radius: 0.3em;
-  /* border: 0; */
-  /* border: 0.1em solid rgba(199, 197, 197, 0.482); */
-  padding: 0.3em 1.5em;
-  margin: 0px 4px;
-  font-size: 1.8vh;
-}
+   color: rgb(13, 100, 195);
+ }
 
 /* animation: nav-logo-spin infinite 20s linear; */
 @keyframes slideInFromTop {

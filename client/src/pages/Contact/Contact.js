@@ -1,25 +1,31 @@
 import React, { Component } from "react";
-import "./Contact.css";
-import Iframe from 'react-iframe';
 
+import Iframe from "react-iframe";
+import "./Contact.css";
 
 class Contact extends Component {
   render() {
     return (
-      <div className="container">
- 
-<Iframe url="https://www.gofundme.com/mvc.php?route=widgets/mediawidget&fund=apoyar-a-nicaragua&image=0&coinfo=0&preview=1"
-        width="450px"
-        height="165px"
-        id="myId"
-        className="myClassname"
-        display="initial"
-        position="relative"
-        />
+      <div className="container-contact">
 
+      <div className="fundme">
+      <h1>Add Encouraging Donation Content Here</h1>
+      <p> Help reach our goal to help Nicaragua! All proceeds..... </p>
+        <Iframe
+          url="https://www.gofundme.com/mvc.php?route=widgets/mediawidget&fund=apoyar-a-nicaragua&image=0&coinfo=0&preview=1"
+          // width="450px"
+          // height="165px"
+          height="20vh"
+          width="90vw"
+          id="myId"
+          className="myClassname"
+          display="initial"
+          position="relative"
+        />
+        </div>
 
         <div className="form-text">
-          <h1>Want to reach out? </h1>
+          <h1 className="reachout">Want to reach out? </h1>
           <p>Please submit your and your feedback!</p>
         </div>
 
@@ -76,7 +82,7 @@ class Contact extends Component {
           </div>
 
           <button type="submit" className="btn submit-button">
-            Sign in
+            SEND MESSAGE
           </button>
         </form>
       </div>

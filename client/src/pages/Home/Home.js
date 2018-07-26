@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-// import API from "../../utils/API";
-import CreatePost from "../CreatePost";
 import Wrapper from "../../components/Wrapper";
 import Tweets from "../../components/Tweets";
 import Loader from "../../components/Loader";
@@ -212,11 +210,11 @@ class Home extends Component {
   };
 
   render() {
-    const loggedIn = this.props.auth.isAuthenticated();
+    // const loggedIn = this.props.auth.isAuthenticated();
     // const canWrite = this.props.auth.userHasScopes(["write:blog","roles: admin"]);
 
     return (
-      <div className="container">
+      <div className="container-home">
         {/* <div> Check console to show current location of page</div>
       
         {!loggedIn ? (
@@ -238,7 +236,7 @@ class Home extends Component {
         )}
         {loggedIn ? <Link to="/profile">Profile&nbsp;</Link> : ""}  */}
 
-        <h1> Updates / Trending Now </h1>
+        <h1 className="home-h1"> Updates / Trending Now </h1>
 
         <div className="card-container">
           <Wrapper>

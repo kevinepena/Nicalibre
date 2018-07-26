@@ -3,8 +3,8 @@ import "./Footer.css";
 
 const Footer = () => (
   <footer className= "footer">
-  <p className="footertext">&copy; 2018
-    Proudly built using React by Kevin Peña and Erika Matsumoto
+  <p className="footertext"> Copyright &copy; {new Date().getFullYear()}
+  &nbsp;  FreeNica
     </p>
   </footer>
 );

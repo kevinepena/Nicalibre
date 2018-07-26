@@ -1,16 +1,17 @@
 .custom-tag {
   width: 100% !important;
-  height: 75vh;
+  height: 65vh;
 }
 img.slideimage {
   object-fit: cover !important;
   width: 100% !important;
-  height: 75vh;
+  height: 65vh;
   border-radius: 0em !important;
 }
 .carousel {
   width: 100% !important;
-  margin-bottom: 2.5em;
+  margin-bottom: 2em;
+  margin-top: 1.8em;
 }
 
 .caption {

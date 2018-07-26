@@ -11,6 +11,9 @@
    height: 4vh;
 
 }
+.nav-left-text{
+  margin-top: 1vh;
+}
 
 .h1i {
   font-weight: 900;
@@ -78,6 +81,9 @@
 
 .btn {
    color: rgb(13, 100, 195);
+   font-size: 1.5vh;
+   font-weight: 450;
+   letter-spacing: .01vw;
  }
 
 /* animation: nav-logo-spin infinite 20s linear; */

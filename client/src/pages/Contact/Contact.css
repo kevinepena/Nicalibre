@@ -1,14 +1,7 @@
 .container-contact{
-  padding:  5vh 70px !important;
+  padding: 3vw 3vw !important;
 /* background: rgba(13, 116, 195, 0.454) ; */
-}
 
-.myClassname{
-  position: relative;
-  display: initial;
-  height: 20vh;
-  width: 90vw;
-  margin-bottom: 5vh;
 }
 
 h1{
@@ -17,10 +10,21 @@ h1{
   
 }
 
-.form-text{
+.fundme-frame{
+  position: relative;
+  display: initial;
+  height: 20vh;
+  width: 90vw;
   margin-bottom: 5vh;
-
 }
+
+.contact{
+height: 50%
+}
+
+/* .form{
+  float: left;
+} */
 
 btn.submit-button{
   color: rgb(13, 100, 195);

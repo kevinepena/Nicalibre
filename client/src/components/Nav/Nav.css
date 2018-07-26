@@ -8,11 +8,12 @@
   padding:0 ;
   margin: 1.45vh 2.5vh   !important;
   margin-top: 2.2vh !important;
-   height: 4vh;
+  height: 4vh;
 
 }
 .nav-left-text{
-  margin-top: 1vh;
+  margin-top: 2vh !important;
+  width:20%;
 }
 
 .h1i {
@@ -25,7 +26,6 @@
   border-bottom: 0.09em solid rgb(235, 222, 176);
   margin-bottom: .2vh;
   letter-spacing: .12vw;
-  
 }
 
 .header-item {

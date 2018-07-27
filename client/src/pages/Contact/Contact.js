@@ -74,9 +74,9 @@ class Contact extends Component {
 
         <div className="frame row">
           <Iframe
-            url="https://www.gofundme.com/mvc.php?route=widgets/mediawidget&fund=apoyar-a-nicaragua&image=0&coinfo=0&preview=1"
+            url="https://www.gofundme.com/mvc.php?route=widgets/mediawidget&fund=apoyar-a-nicaragua&image=1&coinfo=0&preview=1"
             width="450px"
-            height="165px"
+            height="500px"
             id="myId"
             className="myClassname"
             display="initial"

@@ -1,5 +1,4 @@
 .tweets-app {
-  width: 50vw;
-  height: 100vh;
+  height: 80vh;
   overflow: scroll;
 }

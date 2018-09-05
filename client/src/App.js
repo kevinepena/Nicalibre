@@ -22,7 +22,10 @@ import Profile from "./pages/Profile";
 
 const auth = new Auth();
 
+
 class App extends Component {
+
+  
   render() {
     return (
       <Router history={history}>

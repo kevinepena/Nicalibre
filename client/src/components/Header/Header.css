@@ -21,8 +21,14 @@ img.slideimage {
   opacity: 1;
   color: white;
   text-shadow: 2px 3px 6px black;
+  position: absolute;
+  bottom: 0;
 }
 
 .carousel-control-prev{
   height:75vh
+}
+
+.smcaption {
+  font-size: 10px
 }

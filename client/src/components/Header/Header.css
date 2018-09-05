@@ -16,13 +16,12 @@ img.slideimage {
 
 .caption {
   font-family: "Lato", sans-serif !important;
-  font-size: 4vh;
+  font-size: 10px;
   font-weight: 600;
   opacity: 1;
   color: white;
   text-shadow: 2px 3px 6px black;
-  position: absolute;
-  bottom: 0;
+
 }
 
 .carousel-control-prev{

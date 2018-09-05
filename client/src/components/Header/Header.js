@@ -74,10 +74,7 @@ class Header extends React.Component {
         >
           <a href={item.link} target="_blank">
             <img className="slideimage" src={item.src} alt={item.altText} />
-            <div className="caption" >
-            {item.header} <br />
-            <span className="smcaption">{item.caption}</span>
-            </div>
+            <CarouselCaption className="d-block caption" captionText={item.caption} captionHeader={item.header} href={this.href} />
           </a>
         </CarouselItem>
       );

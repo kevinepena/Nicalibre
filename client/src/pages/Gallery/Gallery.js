@@ -12,7 +12,7 @@ class Gallery extends Component {
     }
     componentDidMount() {
         axios
-            .get('https://res.cloudinary.com/kevinpena/image/list/portfolio.json')
+            .get('https://res.cloudinary.com/matsi/image/list/nica.json')
             .then(res => {
                 this.setState({ gallery: res.data.resources });
                 console.log(res)

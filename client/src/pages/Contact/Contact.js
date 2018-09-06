@@ -6,8 +6,8 @@ import "./Contact.css";
 class Contact extends Component {
   render() {
     return (
-      <div className="container-contact">
-        <div className="contact">
+      <div className="container container-contact row">
+        <div className="contact col-md-8 col-sm-12">
           <div className="form-text">
             <h1>Want to reach out? </h1>
             <p>Please submit your and your feedback!</p>
@@ -72,10 +72,10 @@ class Contact extends Component {
           </form>
         </div>
 
-        <div className="frame row">
+        <div className="frame col-md-4 col-sm-12">
           <Iframe
             url="https://www.gofundme.com/mvc.php?route=widgets/mediawidget&fund=apoyar-a-nicaragua&image=1&coinfo=0&preview=1"
-            width="450px"
+            width="100%"
             height="500px"
             id="myId"
             className="myClassname"

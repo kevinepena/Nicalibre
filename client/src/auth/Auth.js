@@ -8,7 +8,7 @@ const origin = window.location.origin;
 export default class Auth {
     requestedScopes = 'openid profile read:blog write:blog roles:admin'
     auth0 = new auth0.WebAuth({
-    domain: 'surrality.auth0.com',
+    domain: 'surreality.auth0.com',
     clientID: 'W0zbRy7G7q4nWJ79h3p5WoN28pBLYZD6',
     redirectUri: origin + '/callback',
     audience: 'https://nica',

@@ -5,7 +5,6 @@ import Auth from "./auth/Auth";
 import history from "./history";
 import ControlledCarousel from "./components/Header";
 import Nav from "./components/Nav";
-import Menu from "./components/Menu";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 // import Donations from "./pages/Donations";
@@ -16,9 +15,6 @@ import Footer from "./components/Footer"
 
 import Callback from "./pages/Callback";
 import Profile from "./pages/Profile";
-
-// Snag the initial state that was passed from the server side
-// var initialState = JSON.parse(document.getElementById('initial-state').innerHTML)
 
 const auth = new Auth();
 
@@ -33,7 +29,7 @@ class App extends Component {
           <Nav auth={auth} />
           <ControlledCarousel />
 
-          <Menu />
+          {/* <Menu /> */}
           <div>
             {/* <Route exact path="/" component={Home} /> */}
             <Route
@@ -43,13 +39,7 @@ class App extends Component {
                 return <Home auth={auth} {...props} />;
               }}
             />
-            <Route
-              exact
-              path="/home"
-              render={props => {
-                return <Home auth={auth} {...props} />;
-              }}
-            />
+  
             <Route
               path="/createpost"
               render={props => {

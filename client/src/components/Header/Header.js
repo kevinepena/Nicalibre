@@ -9,6 +9,7 @@ import {
 } from 'reactstrap';
 
 import API from "../../utils/API";
+import Iframe from "react-iframe"
 
 
 
@@ -82,6 +83,16 @@ class Header extends React.Component {
 
     return (
       <div>
+
+        <Iframe
+          url="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FIntervaloNicaragua%2Fvideos%2F1930482583921600%2F&show_text=0"
+          // width="300px"
+          // height="500px"
+          id="video"
+          // className="video"
+          // display="initial"
+          position="relative"
+        />
 
         <Carousel
           activeIndex={activeIndex}

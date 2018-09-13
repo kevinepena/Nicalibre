@@ -31,3 +31,9 @@ img.slideimage {
 .smcaption {
   font-size: 10px
 }
+
+#video {
+  display: inline;
+  width: 700px;
+  height: 400px;
+}

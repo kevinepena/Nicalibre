@@ -82,29 +82,46 @@ class Header extends React.Component {
     });
 
     return (
-      <div>
+      <div style={{ paddingTop: "90px" }} className="container-fluid" >
+        <div className="row">
+          <div id="video" className="col-sm-12 col-md-12 col-lg-8">
+            <Iframe
+              url="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FIntervaloNicaragua%2Fvideos%2F1930482583921600%2F&show_text=0"
+              data-autoplay="true"
+              position="relative"
+            />
+          </div>
+          <div className="col-sm-12 col-md-6 col-lg-4">
+            <header id="countdown">
+              <h6 className="h1i">¡ Days Since Protest !</h6>
 
-        <Iframe
-          url="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FIntervaloNicaragua%2Fvideos%2F1930482583921600%2F&show_text=0"
-          // width="300px"
-          // height="500px"
-          id="video"
-          // className="video"
-          // display="initial"
-          position="relative"
-        />
+              <h5 className="h2i">
 
-        <Carousel
-          activeIndex={activeIndex}
-          next={this.next}
-          previous={this.previous}
-        >
-          <CarouselIndicators items={this.state.items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
-          {slides}
-          <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-          <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
-        </Carousel>
-      </div>
+                <em>Happening Now</em>
+              </h5>
+
+              <ul>
+                <li>481 People Murdered</li>
+                <li>3,962 People Injured</li>
+                <li>1,338 Kidnapped or Missing</li>
+              </ul>
+            </header>
+
+          </div>
+          <div className="col-sm-12 col-md-6 col-lg-4">
+            <Carousel
+              activeIndex={activeIndex}
+              next={this.next}
+              previous={this.previous}
+            >
+              <CarouselIndicators items={this.state.items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+              {slides}
+              <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+              <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+            </Carousel>
+          </div>
+        </div>
+      </div >
     );
   }
 }

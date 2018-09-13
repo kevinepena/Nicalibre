@@ -49,45 +49,15 @@ class Menu extends Component {
     const location = document.location.pathname;
 
     return (
-      <div>
+    
         <nav className="navbar navbar-expand-lg ">
-
-          {/* <div className="nav-left"> */}
-
-          {/* <div className="nav-picture">
-            <img
-                    src={require("./coaNicaragua.png")}
-                    id="navimg"
-                    alt=""
-                    className="navbar-brand"
-                    href="/"
-                  /> 
-          </div> */}
-
           <div className="nav-left-text">
-            {/* <header className="header-container">
-              <h6 className="header-item h1i">¡ FreeNica !</h6>
-
-              <h5 className="header-item h2i">
-                {" "}
-                <em>Happening Now</em>
-              </h5>
-            </header> */}
             <img src="freenicalogo.png" alt="" style={{ width: "200px" }} />
           </div>
-          {/* </div> */}
 
-          {/* <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon" />
-          </button> */}
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
           <div className="collapse navbar-collapse shift" id="navbarNav">
             <ul className="navbar-nav ml-auto">
@@ -174,14 +144,14 @@ class Menu extends Component {
                       this.toggle("5");
                     }}
                   >
-                    {loggedIn ? (<button className="btn" onClick={this.props.auth.logout}>Log Out</button>) : (<button className="btn" onClick={this.props.auth.login} >Log In</button>)}
+                    {loggedIn ? (<button className="btn" onClick={this.props.auth.logout}>LOGOUT</button>) : (<button className="btn" onClick={this.props.auth.login} >LOGIN</button>)}
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink>
                     {loggedIn && admin ? (
                       <Link to="/">
-                        <div className="btn">Admin&nbsp; </div>
+                        <div className="btn">ADMIN&nbsp; </div>
                       </Link>
                     ) : (
                         ""
@@ -189,18 +159,9 @@ class Menu extends Component {
                   </NavLink>
                 </NavItem>
               </Nav>
-
-              <li className="nav-item nav-link">
-
-
-
-                {/* 
-                {loggedIn ? <Link to="/profile">Profile&nbsp;</Link> : ""} */}
-              </li>
             </ul>
           </div>
         </nav>
-      </div >
     );
   }
 }
